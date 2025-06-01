@@ -4,11 +4,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Layout Example</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      margin: 20px;
+    }
+
+    .sidebar {
+      width: 30%;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .main-content {
+      width: 70%;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        margin: 10px;
+      }
+
+      .sidebar,
+      .main-content {
+        width: 100%;
+        padding: 10px;
+      }
+
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+      }
+
+      nav li {
+        margin: 10px 0;
+      }
+
+      /* Reduce font sizes */
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      body {
+        overflow-x: hidden;
+        padding: 10px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>My Website</h1>
+    <h1>My Responsive Website</h1>
   </header>
 
   <nav>
@@ -23,13 +133,13 @@
   <div class="container">
     <aside class="sidebar">
       <h2>Sidebar</h2>
-      <p>Links and extras here.</p>
+      <p>This is the sidebar with some extra content.</p>
     </aside>
 
     <main class="main-content">
-      <h2>Welcome</h2>
-      <p>This is the main content section. Resize the browser to see the responsive behavior.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Sample image">
+      <h2>Main Content</h2>
+      <p>This is the main content section of the page. Resize the browser to see how the layout adapts to different screen sizes using media queries.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Sample Image">
     </main>
   </div>
 
